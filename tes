@@ -1,0 +1,108 @@
+      <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/gadogado.jpeg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Main Course</span>
+                                <h6 class="card-title mt-2 mb-2">Gado-gado</h6>
+                                <p class="card-text text-primary fw-bold">Rp.22.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/bakso.jpg" alt="" height="130%" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Main Course</span>
+                                <h6 class="card-title mt-2 mb-2">Bakso</h6>
+                                <p class="card-text text-primary fw-bold">Rp.25.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/tengkleng.jpg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Main Course</span>
+                                <h6 class="card-title mt-2 mb-2">Tengkleng Gajah</h6>
+                                <p class="card-text text-primary fw-bold">Rp.40.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/selendangmayang.jpg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Dessert</span>
+                                <h6 class="card-title mt-2 mb-2">Es Selendang Mayang</h6>
+                                <p class="card-text text-primary fw-bold">Rp.15.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/esbuah.jpeg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Dessert</span>
+                                <h6 class="card-title mt-2 mb-2">Sop Buah</h6>
+                                <p class="card-text text-primary fw-bold">Rp.15.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/1761105011-kopiluwak.webp" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Drink</span>
+                                <h6 class="card-title mt-2 mb-2">Luwak Coffee</h6>
+                                <p class="card-text text-primary fw-bold">Rp.200.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/talam.jpg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Dessert</span>
+                                <h6 class="card-title mt-2 mb-2">Talam cake</h6>
+                                <p class="card-text text-primary fw-bold">Rp.25.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/sotobetawi.jpg" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Main Course</span>
+                                <h6 class="card-title mt-2 mb-2">Soto Betawi</h6>
+                                <p class="card-text text-primary fw-bold">Rp.35.000,-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card product-card">
+                            <div class="product-img">
+                                <img src="../assets/uploads/1761105011-kopiluwak.webp" alt="" width="100%">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary badge category">Drink</span>
+                                <h6 class="card-title mt-2 mb-2">Luwak Coffee</h6>
+                                <p class="card-text text-primary fw-bold">Rp.200.000,-</p>
+                            </div>
+                        </div>
+                    </div>
