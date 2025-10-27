@@ -121,7 +121,7 @@ function renderProducts(searchProduct = "") {
   filtered.forEach((product) => {
     const col = document.createElement("div");
     col.className = "col-md-4 col-sm-6";
-    col.innerHTML = `<div class="card product-card">
+    col.innerHTML = `<div class="card product-card" onclick="addToCart(${product.id})">
         <div class="product-img">
             <img src="../${product.product_photo}" alt="" width="100%">
         </div>
@@ -133,6 +133,107 @@ function renderProducts(searchProduct = "") {
      </div>`;
     productGrid.appendChild(col);
   });
+}
+
+let cart = [];
+function addToCart(id) {
+  const product = products.find((p) => p.id == id);
+  if (!product) {
+    return;
+  }
+  const existing = cart.find((item) => item.id == id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  renderCart();
+}
+
+function renderCart() {
+  const cartContainer = document.querySelector("#cartItems");
+  cartContainer.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = `
+                    <div class="cart-items" id="cartItems">
+                    <div class="text-center text-muted mt-5">
+                        <i class="bi bi-basket-fill mb-3"></i>
+                        <p>Your Basket is Empty</p>
+                    </div>
+                </div>`;
+    updateTotal();
+  }
+  cart.forEach((item, index) => {
+    const div = document.createElement("div");
+    div.className = "cart-item d-flex justify-content-between align-items-center mb-2";
+    div.innerHTML = `
+                <div>
+                    <strong>${item.product_name}</strong>
+                    <small>${item.product_price}</small>
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-secondary me-2" onclick="changeQty(${item.id}, -1)">-</button>
+                    <span>${item.quantity}</span>
+                    <button class="btn btn-outline-secondary ms-3" onclick="changeQty(${item.id}, 1)">+</button>
+                    <button class="btn btn-sm btn-danger ms-3" onclick="removeItem(${item.id})">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+    `;
+    cartContainer.appendChild(div);
+  });
+  updateTotal();
+}
+// Menghapus item dari cart
+function removeItem(id) {
+  cart = cart.filter((p) => p.id != id);
+  renderCart();
+}
+// Mengatur Qty di Cart
+function changeQty(id, x) {
+  const item = cart.find((p) => p.id == id);
+  if (!item) {
+    return;
+  }
+  item.quantity += x;
+  if (item.quantity <= 0) {
+    alert("Minimum 1 Product");
+    item.quantity += 1;
+    //cart = filter((p) => p.id != id);
+  }
+  renderCart();
+}
+
+function updateTotal() {
+  const subtotal = cart.reduce((sum, item) => sum + item.product_price * item.quantity, 0);
+  const tax = subtotal * 0.1;
+  const total = tax + subtotal;
+
+  document.getElementById("subtotal").textContent = `Rp.${subtotal.toLocaleString()}`;
+  document.getElementById("tax").textContent = "Rp." + tax.toLocaleString();
+  document.getElementById("total").textContent = `Rp.${total.toLocaleString()}`;
+
+  //   console.log(subtotal);
+  //   console.log(tax);
+  //   console.log(total);
+}
+document.getElementById("clearCart").addEventListener("click", function () {
+  cart = [];
+  renderCart();
+});
+
+async function processPayment() {
+  if (cart.lenght === 0) {
+    alert("Your Basket is Still Empty");
+  }
+  try {
+    const res = await fetch("add-pos.php?payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cart }),
+    });
+  } catch (error) {}
 }
 
 //useEffect(() => {
