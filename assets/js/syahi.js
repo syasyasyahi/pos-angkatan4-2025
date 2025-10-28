@@ -138,9 +138,8 @@ function renderProducts(searchProduct = "") {
 let cart = [];
 function addToCart(id) {
   const product = products.find((p) => p.id == id);
-  if (!product) {
-    return;
-  }
+  // if (!product) {
+  // }
   const existing = cart.find((item) => item.id == id);
   if (existing) {
     existing.quantity += 1;
@@ -226,14 +225,27 @@ document.getElementById("clearCart").addEventListener("click", function () {
 async function processPayment() {
   if (cart.lenght === 0) {
     alert("Your Basket is Still Empty");
+    return;
   }
+
+  console.log(cart);
   try {
     const res = await fetch("add-pos.php?payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ cart }),
     });
-  } catch (error) {}
+    const data = await res.json();
+    if (data.status == "success") {
+      alert("Transaction Success");
+      window.location.href = "print.php";
+    } else {
+      alert("Transaction Failed", data. message);
+    }
+  } catch (error) {
+    alert("Transaction Failed");
+    console.log("error", error);
+  }
 }
 
 //useEffect(() => {
