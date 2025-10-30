@@ -39,12 +39,18 @@ $rowDetails = mysqli_fetch_all($queryDetails, MYSQLI_ASSOC);
 
         .header {
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        .header img {
+            display: block;
+            margin: 0 auto 5px auto;
+            width: 100px;
         }
 
         .header h2 {
             font-size: 20px;
-            margin: 0 0 10px 0;
+            margin: 5px 0 10px 0;
             font-weight: bold;
         }
 
@@ -110,6 +116,12 @@ $rowDetails = mysqli_fetch_all($queryDetails, MYSQLI_ASSOC);
             margin: 10px 0;
         }
 
+        .footer {
+            font-weight: bold;
+            font-size: 12px;
+            text-align: center;
+        }
+
         .payment {
             margin-top: 10px;
         }
@@ -126,9 +138,12 @@ $rowDetails = mysqli_fetch_all($queryDetails, MYSQLI_ASSOC);
 
 <body onload="window.print()">
     <div class="receipt-page">
+
         <div class="header">
-            <h2>Payment Receipt</h2>
-            <p>Teras Nusantara</p>
+            <img src="../assets/uploads/logo.png" alt="Logo Teras Nusantara"
+                style="width: 100px; height:auto; margin-bottom:5px;">
+            <h2>Teras Nusantara</h2>
+            <p>Payment Receipt</p>
             <p>Jl. Karet Pasar Baru Barat, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus
                 Ibukota Jakarta 10250</p>
             <p>(021) 57950913</p>
@@ -189,6 +204,11 @@ $rowDetails = mysqli_fetch_all($queryDetails, MYSQLI_ASSOC);
                 <span>Rp. 6.000</span>
             </div>
         </div> -->
+        <div class="footer">
+            <p>Thank you for dining with us</p>
+            <p>Share your experience on google review to get a free dessert on your next visit</p>
+            <p>Have a Wonderful Day Ahead! :D</p>
+        </div>
     </div>
 </body>
 
